@@ -30,6 +30,13 @@ struct tcp{
     u_short tcp_urp;        //紧急数据指针
 };
 
+struct udp{
+    u_short udp_sport;  //源端口
+    u_short udp_dport;  //目的端口
+    u_short udp_len;    //首部加数据的长度，单位字节
+    u_short udp_sum;    //校验和
+};
+
 const u_char* unpack_tcp(const u_char*, struct tcp*);
 
 void print_tcp(struct tcp*, uint);
