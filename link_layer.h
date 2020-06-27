@@ -24,6 +24,14 @@ struct ethernet{
     u_short ether_type;                 //网络层协议类型
 };
 
+struct pppoe{
+    u_int32_t version;  //pppoe版本，为0x01
+    u_int32_t type;     //pppoe类型，为0x01
+    u_char code;        //Discovery和PPPoE会话中分别指定
+    u_short session_id; //与以太网smac和dmac一起实际地定义了一个PPPoE会话
+    u_short len;        //负载长度，不包括pppoe头部，单位为字节
+};
+
 // 解析帧头部，返回下一层位置指针
 const u_char* unpack_ethernet(const u_char*, struct ethernet*);
 
