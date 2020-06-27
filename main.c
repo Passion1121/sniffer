@@ -4,7 +4,6 @@
 #include <signal.h>
 #include "parse_cmd.h"
 #include "link_layer.h"
-#include "mpls_layer.h"
 #include "network_layer.h"
 #include "transport_layer.h"
 
